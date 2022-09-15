@@ -27,5 +27,31 @@ class MathUtilsTest {
 
     }
 
+    @Test
+    void isHappy_HappyNumbersTest(){
+
+        int happy1 = 13;
+        int happy2 = 77854;
+        int happy3 = 189886;
+
+        Assertions.assertTrue(MathUtils.isHappy(happy1));
+        Assertions.assertTrue(MathUtils.isHappy(happy2));
+        Assertions.assertTrue(MathUtils.isHappy(happy3));
+
+    }
+
+    @Test
+    void isHappy_UnhappyNumbersTest(){
+
+        int unhappy1 = 200;
+        int unhappy2 = 456;
+        int unhappy3 = 12346;
+
+        Assertions.assertFalse(MathUtils.isHappy(unhappy1));
+        Assertions.assertFalse(MathUtils.isHappy(unhappy2));
+        Assertions.assertFalse(MathUtils.isHappy(unhappy3));
+
+    }
+
 
 }

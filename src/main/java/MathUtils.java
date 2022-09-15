@@ -1,4 +1,10 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MathUtils {
+
+    private static final List<Integer> SAD_NUMBER_CYCLE = new ArrayList<>(Arrays.asList(4, 16, 37, 58, 89, 145, 42, 20, 4));
 
     /**
      * Calculates the sum of the squared digits of a given positive integer
@@ -17,5 +23,23 @@ public class MathUtils {
 
         return sum;
     }
+
+    /**
+     * Determines whether a given positive integer is a happy number
+     * @param n positive integer
+     * @return true if n is a happy number
+     */
+    public static boolean isHappy(int n) {
+
+        if(n <= 0) return false;
+
+        while(!SAD_NUMBER_CYCLE.contains(n)){
+            n = squareDigits(n);
+            if(n == 1) return true;
+        }
+
+        return false;
+    }
+
 
 }

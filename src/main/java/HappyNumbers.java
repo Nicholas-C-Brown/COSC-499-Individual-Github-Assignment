@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class HappyNumbers {
 
     public static void main(String[] args) {
+
         Scanner s = new Scanner(System.in);
 
         System.out.println("Enter a positive integer: ");
@@ -15,6 +16,7 @@ public class HappyNumbers {
 
                 if(n > 0) {
                     System.out.printf("%d is %s%n", n, MathUtils.isHappy(n) ? "happy" : "unhappy");
+                    System.out.printf("%d is %s%n", n, MathUtils.isPrime(n) ? "prime" : "not prime");
                     break;
                 }
 
